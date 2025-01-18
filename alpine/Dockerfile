@@ -6,7 +6,7 @@ FROM alpine:3.21
 
 ARG opendkim_ver=2.11.0-Beta2
 ARG s6_overlay_ver=3.2.0.2
-
+ARG TARGETARCH=arm64
 
 # Build and install OpenDKIM
 # https://git.alpinelinux.org/cgit/aports/tree/community/opendkim/APKBUILD?h=4322107ba395a710a041ee479c5805c97169a36b
