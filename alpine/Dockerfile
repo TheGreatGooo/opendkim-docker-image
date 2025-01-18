@@ -6,7 +6,6 @@ FROM alpine:3.21
 
 ARG opendkim_ver=2.11.0-Beta2
 ARG s6_overlay_ver=3.2.0.2
-ARG TARGETARCH=arm64
 
 # Build and install OpenDKIM
 # https://git.alpinelinux.org/cgit/aports/tree/community/opendkim/APKBUILD?h=4322107ba395a710a041ee479c5805c97169a36b
@@ -91,7 +90,7 @@ RUN apk add --update --no-cache --virtual .tool-deps \
  && curl -fL -o /tmp/s6-overlay-noarch.tar.xz \
          https://github.com/just-containers/s6-overlay/releases/download/v${s6_overlay_ver}/s6-overlay-noarch.tar.xz \
  && curl -fL -o /tmp/s6-overlay-bin.tar.xz \
-         https://github.com/just-containers/s6-overlay/releases/download/v${s6_overlay_ver}/s6-overlay-x86_64.tar.xz \
+         https://github.com/just-containers/s6-overlay/releases/download/v${s6_overlay_ver}/s6-overlay-aarch64.tar.xz \
  && tar -xf /tmp/s6-overlay-noarch.tar.xz -C / \
  && tar -xf /tmp/s6-overlay-bin.tar.xz -C / \
     \
